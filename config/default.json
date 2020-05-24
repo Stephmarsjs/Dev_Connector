@@ -1,0 +1,3 @@
+{
+    "mongoURI": "mongodb+srv://marsDB:mars123@cluster0-msycg.mongodb.net/test?retryWrites=true&w=majority"
+}
