@@ -1,5 +1,6 @@
 const express = require('express')
 const router = express.Router();
+const gravatar = require('gravatar');
 const { check, validationResult } = require('express-validator/check');
 
 const User = require('../../models/User')
@@ -28,10 +29,19 @@ async (req, res) => {
     if (user) {
         res.status(400).json({ errors: [{ msg: 'User already exists' }] });
     }
-  // See if user exists
+ 
+    const avatar = gravatar.url(email, {
+        s: '200',
+        r: 'pg',
+        d: 'mm'
+    })
 
-  // get users gravatar
-
+    user = new User({
+        name,
+        email,
+        avatar,
+        password
+    })
   //encrypt password
 
   // return jasonwebtoken
