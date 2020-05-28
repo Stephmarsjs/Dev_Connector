@@ -1,4 +1,4 @@
 {
-    "mongoURI": "mongodb+srv://marsDB:mars123@cluster0-msycg.mongodb.net/test?retryWrites=true&w=majority",
+    "mongoURI": "mongodb+srv://marsDB:<password>@cluster0-msycg.mongodb.net/test?retryWrites=true&w=majority",
     "jwtSecret": "mysecrettoken"
 }
