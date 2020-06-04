@@ -12,11 +12,10 @@ const User = require('../../models/User');
 
 router.get('/me', auth, async (req,res) => {
     try {
-      const profile = await (await Profile.findOne({ user: req.user.id }).populate(
+      const profile = await Profile.findOne({ user: req.user.id }).populate(
         'user', 
         ['name', 'avatar'])
         
-      )
 
       if(!profile) {
           return res.status(400).json({ msg: 'There is no profile for this user' });
